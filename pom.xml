@@ -31,6 +31,11 @@
             <artifactId>stax</artifactId>
             <version>1.2.0</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.wnameless.json</groupId>-->
+<!--            <artifactId>json-flattener</artifactId>-->
+<!--            <version>0.8.1</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>
