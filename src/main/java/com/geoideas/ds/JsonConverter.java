@@ -58,11 +58,6 @@ public class JsonConverter {
         var currentField = "";
         while(reader.hasNext()) {
             var element = reader.nextEvent();
-//            if(element.isStartElement()) {
-//                var tag = element.asStartElement();
-//                System.out.println(tag.getName().getLocalPart());
-//                if(tag.getName().getLocalPart().equals("age")) ageCount++;
-//            }
             if(element.isStartElement()) {
                 var tag = element.asStartElement();
                 var name = tag.getName().getLocalPart();
@@ -80,6 +75,9 @@ public class JsonConverter {
                 }
             }
             else if(element.isCharacters()) {
+                var data = element.asCharacters().getData();
+                if(currentField.equals("instanceID"))
+                    submission.put("meta/instanceID", data);
                 addField(currentField, element.asCharacters().getData());
                 currentField = "";
             }
@@ -92,14 +90,6 @@ public class JsonConverter {
         if(field == null) return false;
         if(isRepeat(field)) {
             var formattedName = formatName(field.getString(NAME));
-//            if(inOrIsRepeat(field) && field.has(PARENT)) {
-//                var parent = firstRepeatParent(field);
-//                System.out.println("In repeat");
-//                System.out.println(parent.toString());
-//                System.out.println(field.getString(NAME));
-//                parent.toList().stream().map(item -> (JSONObject)item)
-//                        .
-//            }
             if(!sub.has(formattedName))
                 sub.put(formattedName, new JSONArray());
             return true;
