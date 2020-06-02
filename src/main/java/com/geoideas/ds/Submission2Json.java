@@ -1,6 +1,6 @@
 package com.geoideas.ds;
 
-import com.github.wnameless.json.flattener.JsonFlattener;
+// import com.github.wnameless.json.flattener.JsonFlattener;
 import org.json.JSONObject;
 import org.json.XML;
 
@@ -13,14 +13,15 @@ import java.nio.file.Path;
 public class Submission2Json {
 
 //    public static void main(String[] args) throws IOException, XMLStreamException {
-//        var xform = Files.readAllLines(Path.of("demo1.xml")).stream().reduce("", String::concat);
+//        var xform = Files.readAllLines(Path.of("demo.xml")).stream().reduce("", String::concat);
 //        var form = Files.readAllLines(Path.of("form.json")).stream().reduce("", String::concat);
-//        var count = 100;
+//        var count = 1;
 //        var total = 0;
 //        for(var i = 0; i < count; i++) {
 //            var start = System.currentTimeMillis();
 //            var converter = new JsonConverter(new JSONObject(form), xform);
 //            var json = converter.convert();
+//            System.out.println(json);
 //            var end = System.currentTimeMillis() - start;
 //            total += end;
 //        }
